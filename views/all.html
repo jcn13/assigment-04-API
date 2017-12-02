@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Books</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="/style/style.css">
+</head>
+<body class="container-fluid">
+	<div class="row">
+		<div class="col-12 logo">
+			<a href="/"></a>><img src="/imgs/Logo.png" alt="Logo JoLi Books Emporium"></a>
+		</div>
+		<div class="col-12 boxContent">
+			<h1>Books</h1>
+			<table class="table table-hover table-sm">
+				<tr>
+					<th>Title</th>
+					<th>ISBN</th>
+					<th>Author</th>
+					<th>Genre</th>
+					<th>Date Published</th>
+					<th>Publisher</th>
+					<th>Edition</th>
+					<th>Borrowed</th>
+					<th>Reserved</th>
+					<th>Details</th>
+					{{!-- <th>Action</th> --}}
+				</tr>
+			  {{#each books}}
+			  	<tr>
+			  		<td>{{title}}</td>
+			  		<td>{{isbn}}</td>
+			  		<td>{{author}}</td>
+			  		<td>{{genre}}</td>
+			  		<td>{{pub_inf.published_date}}</td>
+			  		<td>{{pub_inf.publisher}}</td>
+			  		<td>{{pub_inf.edition}}</td>
+			  		<td>{{status.borrowed}}</td>
+			  		<td>{{status.reserved}}</td>
+			  		<td><a href="/books/{{isbn}}" type="button" class="btn btn-default">Select</a></td>
+			  	</tr>
+			  {{/each}}		
+			</table>
+	<div class="flexCenter">
+		<a href="/" type="button" class="btn btn-primary">Back</a>	
+		<a href="/books/new" type="button" class="btn btn-danger">New Book</a>
+		<a href="/books/search" type="button" class="btn btn-warning">Search</a>
+		
+	</div>
+</div>	
+</body>
+</html>
