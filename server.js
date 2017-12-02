@@ -23,9 +23,11 @@ const db = firebase.database()
 const book = db.ref('books')
 const user = db.ref('user')
 
+const PORT = process.env.PORT || 8080
+
 server.connection({
-	port: 8000,
-	host: 'https://aqueous-sands-21432.herokuapp.com/'
+	port: PORT,
+	host: 'localhost'
 })
 
 server.register(Inert, (err) =>{
