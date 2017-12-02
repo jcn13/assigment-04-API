@@ -26,8 +26,7 @@ const user = db.ref('user')
 const PORT = process.env.PORT || 8080
 
 server.connection({
-	port: PORT,
-	host: 'localhost'
+	port: PORT
 })
 
 server.register(Inert, (err) =>{
