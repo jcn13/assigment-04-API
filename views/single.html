@@ -2,61 +2,65 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Books</title>
+	<title>Book</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-	<link rel="stylesheet" href="public/style.css">
-</head>
-<body>
-	<h1>Books</h1>
-	<div>
-	<table class="table">
-		<tr>
-			<td>Title</td>
-			<td>{{title}}</td>
-		</tr>
-		<tr>
-			<td>ISBN</td>
-			<td>{{isbn}}</td>
-		</tr>
-		<tr>
-			<td>Author</td>
-			<td>{{author}}</td>
-		</tr>
-		<tr>
-			<td>Genre</td>
-			<td>{{genre}}</td>
-		</tr>
-		<tr>
-			<td>Date Published</td>
-			<td>{{pub_inf.published_date}}</td></tr>
-		<tr>
-			<td>Publisher</td>
-			<td>{{pub_inf.publisher}}</td>
-		</tr>
-		<tr>
-			<td>Edition</td>
-			<td>{{pub_inf.edition}}</td>
-		</tr>
-		<tr>
-			<td>Borrowed</td>
-			<td>{{status.borrowed}}</td>
-		</tr>
-		<tr>
-			<td>Reserved</td>
-			<td>{{status.reserved}}</td>
-		</tr>	  
-	</table>
-	<form action="/books/{{isbn}}/destroy" method="POST">
-		<div class="flexCenter">
-			<a href="/books/all" type="button" class="btn btn-primary">Back</a>
-			<a href="/books/{{isbn}}/edit" type="button" class="btn btn-warning">Edit Book</a>
-			<button type="submit" class="btn btn-danger">Delete Book</button>	
-			
-		</div>
-	</form>
-</div>
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="/style/style.css">
+</head>
+<body class="container-fluid">
+	<div class="row vertical">
+		<div class="col-3">
+			<img src="/imgs/Logo.png" alt="Logo JoLi Books Emporium">
+		</div>
+		<div class="col-8 boxContent">
+			<h1>Books</h1>
+			<table class="table centerTable table-responsive">
+				<tr>
+					<td>Title</td>
+					<td>{{title}}</td>
+				</tr>
+				<tr>
+					<td>ISBN</td>
+					<td>{{isbn}}</td>
+				</tr>
+				<tr>
+					<td>Author</td>
+					<td>{{author}}</td>
+				</tr>
+				<tr>
+					<td>Genre</td>
+					<td>{{genre}}</td>
+				</tr>
+				<tr>
+					<td>Date Published</td>
+					<td>{{pub_inf.published_date}}</td></tr>
+				<tr>
+					<td>Publisher</td>
+					<td>{{pub_inf.publisher}}</td>
+				</tr>
+				<tr>
+					<td>Edition</td>
+					<td>{{pub_inf.edition}}</td>
+				</tr>
+				<tr>
+					<td>Borrowed</td>
+					<td>{{status.borrowed}}</td>
+				</tr>
+				<tr>
+					<td>Reserved</td>
+					<td>{{status.reserved}}</td>
+				</tr>	  
+			</table>
+			<form action="/books/{{isbn}}/destroy" method="POST">
+				<div class="btnsInline">
+					<a href="/books/all" type="button" class="btn btn-primary">Back</a>
+					<a href="/books/{{isbn}}/edit" type="button" class="btn btn-warning">Edit Book</a>
+					<button type="submit" class="btn btn-danger">Delete Book</button>	
+				</div>
+			</form>
+		</div>
+	</div>
 </body>
 </html>

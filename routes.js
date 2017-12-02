@@ -1,17 +1,24 @@
+const Hapi = require('hapi')
+const Inert = require('inert')
+const Vision = require('vision')
 const Handlebars = require('handlebars')
 const firebase = require('firebase')
-const path = require('path')
+const Path = require('path')
+require('dotenv').config()
+
+const server = new Hapi.Server()
 
 const config = {
-    apiKey: "AIzaSyBJbtAWNHp4vaO-9Yic-m75R-keNfeqpQg",
-    authDomain: "assignment-04-api.firebaseapp.com",
-    databaseURL: "https://assignment-04-api.firebaseio.com",
-    projectId: "assignment-04-api",
-    storageBucket: "assignment-04-api.appspot.com",
-    messagingSenderId: "771892051580"
+    apiKey: process.env.APIKEY,
+    authDomain: process.env.AUTHDOMAIN,
+    databaseURL: process.env.DATABASEURL,
+    projectId: process.env.PROJECTID,
+    storageBucket: process.env.STORAGEBUCKET,
+    messagingSenderId: process.env.MESSAGINGSENDERID
 }
 firebase.initializeApp(config)
 
+const auth = firebase.auth()
 const db = firebase.database()
 const book = db.ref('books')
 const user = db.ref('user')
@@ -119,9 +126,6 @@ module.exports =[
 			book.child(`${newBook.isbn}`).set(newBook)
 			reply.redirect().location('all')
 		}
-	},
-	{
-
 	}
 ]
 
