@@ -23,10 +23,11 @@ const db = firebase.database()
 const book = db.ref('books')
 const user = db.ref('user')
 
-const PORT = process.env.PORT || 8080
+const PORT = process.env.PORT || 8000
 
 server.connection({
-	port: PORT
+	port: PORT,
+	host: 'localhost'
 })
 
 server.register(Inert, (err) =>{
