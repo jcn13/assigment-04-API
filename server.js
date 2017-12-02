@@ -25,7 +25,7 @@ const user = db.ref('user')
 
 server.connection({
 	port: 8000,
-	host: 'localhost'
+	host: 'https://aqueous-sands-21432.herokuapp.com/'
 })
 
 server.register(Inert, (err) =>{
