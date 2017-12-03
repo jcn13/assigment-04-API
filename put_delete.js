@@ -4,12 +4,31 @@ const Vision = require('vision')
 const Handlebars = require('handlebars')
 const firebase = require('firebase')
 const Path = require('path')
+const Joi = require('joi')
 require('dotenv').config()
 
 const server = new Hapi.Server()
 
 const db = firebase.database()
 const book = db.ref('books')
+
+const nestedPub = Joi.object().keys({
+		published_date: Joi.number().integer(),
+		publisher: Joi.string().required(),
+		edition: Joi.number().integer()
+})
+const nestedStatus = Joi.object().keys({
+		borrowed: Joi.boolean().required(),
+		reserved: Joi.boolean().required()
+})
+const schemaBook = {
+	title: Joi.string().required(),
+	isbn: Joi.string().required(),
+	author: Joi.string().required(),
+	genre: Joi.string().required(),
+	pub_inf: nestedPub,
+	status: nestedStatus
+}
 
 module.exports=[
 	{
@@ -24,6 +43,11 @@ module.exports=[
 	{
 		method:'PUT',
 		path:'/books/{isbn}',
+		config: {
+			validate:{
+				payload: schemaBook[nestedStatus, nestedPub]
+			}
+		},
 		handler: (request, reply) =>{
 			let isbn = request.params.isbn			
 			let newBook = {
