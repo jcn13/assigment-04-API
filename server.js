@@ -9,7 +9,8 @@ const PORT = process.env.PORT || 8000
 const server = new Hapi.Server()
 
 server.connection({
-	port: PORT
+	port: PORT,
+	host: 'localhost'
 })
 
 server.register(Inert, (err) =>{
