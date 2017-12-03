@@ -41,15 +41,20 @@
 			  		<td>{{pub_inf.edition}}</td>
 			  		<td>{{status.borrowed}}</td>
 			  		<td>{{status.reserved}}</td>
-			  		<td><a href="/books/{{isbn}}" type="button" class="btn btn-default">Select</a></td>
+			  		<td>
+			  		<div class="btnsInline2">
+			  			<a href="/books/{{isbn}}" class="btn btn-default">Select</a>
+			  		</div>
+			  		</td>
 			  	</tr>
 			  {{/each}}		
 			</table>
 			<div class="btnsInline">
-				<a href="/" type="button" class="btn btn-primary">Back</a>	
-				<a href="/books/new" type="button" class="btn btn-danger">New Book</a>
-				<a href="/books/search" type="button" class="btn btn-warning">Search</a>
+				<a href="/" class="btn btn-warning">Back</a>	
+				<a href="/books/new" class="btn btn-primary">New Book</a>
+				<a href="/books/search" class="btn btn-success">Search</a>
 			</div>
 		</div>
+	</div>
 </body>
 </html>
