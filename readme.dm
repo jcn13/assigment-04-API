@@ -6,6 +6,10 @@ Assign 04
 
 Joli Book Emporium
 
+Deployed to NOW
+
+Link: assignment-04-api-qavscumvij.now.sh
+
 Instructions to make it work
 
 1-download the files

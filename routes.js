@@ -11,7 +11,7 @@ const server = new Hapi.Server()
 const config = {
     apiKey: process.env.APIKEY,
     authDomain: process.env.AUTHDOMAIN,
-    databaseURL: process.env.DATABASEURL,
+    databaseURL:"https://assignment-04-api.firebaseio.com",
     projectId: process.env.PROJECTID,
     storageBucket: process.env.STORAGEBUCKET,
     messagingSenderId: process.env.MESSAGINGSENDERID
